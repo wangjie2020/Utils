@@ -36,12 +36,21 @@ public class RandomUtil {
 		return x;
 	
 	}
-	//方法3：返回1个1-9,a-Z之间的随机字符。 (8分)
+	//方法3-1：返回1个1-9,a-Z之间的随机字符。 (8分)
 	public static char randomCharacter (){
 		String str = "123456789qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM";
 		return str.charAt(random(0, str.length()-1));
-	
 	}
+	//返回3-2：返回个0-9
+	public static String randomNumber(int length) {
+		String str = "1234567890";
+		String result="";
+		for (int i = 0; i < length; i++) {
+			result+=str.charAt(random(0, str.length()-1));
+		}
+		return result;
+	}
+	
 	//方法4：返回参数length个字符串(5分)，方法内部要调用randomCharacter()方法 (4分)
 	public static String randomString(int length){
 		StringBuffer sb = new StringBuffer();

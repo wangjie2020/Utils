@@ -56,6 +56,41 @@ public class StringUtil {
 		String name2 = randomChineseString(RandomUtil.random(1, 2));
 		return name1+name2;
 	}
+	/**
+	 * 
+	 * @Title: isEmail 
+	 * @Description: 判断是否是邮箱格式
+	 * @param src
+	 * @return
+	 * @return: boolean
+	 */
+	public static boolean isEmail(String src) {
+		String reg="\\w+\\@\\w+\\.\\w+";
+		return src.matches(reg);
+	}
 
+	/**
+	 * @Title: isPhoneNumber 
+	 * @Description: 判断是否是手机号
+	 * @param src
+	 * @return
+	 * @return: boolean
+	 */
+	public static boolean isPhoneNumber(String src) {
+		String reg = "^1[3|4|5|7|8]\\d{9}$";
+		return src.matches(reg);
+	}
+	
+	/**
+	 * @Title: isNumber 
+	 * @Description:是否是数字
+	 * @param src
+	 * @return
+	 * @return: boolean
+	 */
+	public static boolean isNumber(String src) {
+		String reg="^(-)?[0-9]+(\\.[0-9]+)?$";
+		return src.matches(reg);
+	}
 
 }
