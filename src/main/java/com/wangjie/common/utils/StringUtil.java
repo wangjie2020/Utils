@@ -96,24 +96,19 @@ public class StringUtil {
 		return src.matches(reg);
 	}
 	/**
-	 * 
-	 * @Title: isHttpUrl 
-	 * @Description: 校验传入的参数是否为url
-	 * @param param
-	 * @return
-	 * @return: boolean
+	 * 功能说明：实现判断传入的字符串是否为包含http的url地址
 	 */
-	public static boolean isHttpUrl(String param) {
-		URL url;
+	public static boolean isHttpUrl(String src){
 		try {
-			url = new URL(param);
+			URL url = new URL(src);
 			url.openStream();
-			return true;//url 合法
+			return true;
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println("链接打不开");
+			e.printStackTrace();
 		}
+		//System.out.println("不是合法的url");
 		return false;
+	
 	}
 
 }
